@@ -9,7 +9,6 @@ Description: A simple convnet that achieves ~99% test accuracy on MNIST.
 """
 ## Setup
 """
-
 import numpy as np
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -27,27 +26,17 @@ import scipy
 """
 ## 機能の切り替えフラグ
 ##
-## モデルの学習を行う: learnModel => True 
-## 学習したモデルを保存する: saveModel => True  *モデルの保存は learnModel と saveModel が True の時に行う
-## 学習済みモデルを使用する: useLearnedModel => True 
-## モデルの評価を行う: evaluateTrainedModel => True 
-## 取り込んだ画像を表示する: showFigureTest => True  とりあえず3x3で表示するように組んでいる
-## データ拡張を行う: generateFigure => True  
-## データ拡張した画像を保存する: saveNewFigure => True  *データ拡張することが前提なので、generateFigureをtrueにすること。Falseで加工した画像を9枚表示する
-## 学習済みモデルを使用して再度学習を行う: useLearnedModelForLearning => True
-## 画像を切り取る: cropImage => True
-##
+## モデルの学習を行う: learnModel 
+## 学習したモデルを保存する: saveModel *モデルの保存は learnModel と saveModel が True の時に行う
+## 学習済みモデルを使用する: useLearnedModel
+## モデルの評価を行う: evaluateTrainedModel
+##z
 """
 # ###################################################################################
 learnModel = False
 saveModel = False
 useLearnedModel = True
 evaluateTrainedModel =  True
-showFigureTest = False
-generateFigure = False
-saveNewFigure = False
-useLearnedModelForLearning = False
-cropImage = False
 # ###################################################################################
 
 
@@ -188,12 +177,17 @@ if evaluateTrainedModel:
         print(threshold)
         print("")
 
+        # モデルによる予測値
         print("@@@@@@@@@@@@@@@@@ y_pred_argmax_datas @@@@@@@@@@@@@@@")
         print(y_pred_argmax_datas)
         print("")
+
+         # テストデータのクラス
         print("@@@@@@@@@@@@@@@@@ y_test_argmax_datas @@@@@@@@@@@@@@@")
         print(y_test_argmax_datas)
         print("")
+
+        # 個別の予測値とテストデータの表示
         print("@@@@@@@@@@@@@@@@@ y_pred_argmax_data @@@@@@@@@@@@@@@")
 
         class1 = 0
