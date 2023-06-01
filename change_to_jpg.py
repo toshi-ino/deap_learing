@@ -25,10 +25,10 @@ from PIL import Image
 
 
 num_skipped = 0
-path = "./validation_data"
+path = "./training_data"
 image_folders = os.listdir(path)
 print(image_folders) 
-out_path = "./png" # 変換先のフォルダを指定
+out_path = "./changed_training_data" # 変換先のフォルダを指定
 
 for folder_name in (image_folders):
     print(folder_name)
